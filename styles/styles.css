@@ -21,6 +21,179 @@ body {
   width: 100vw;
 }
 
+header {
+  width: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  background: url("../assets/images/mobile/image-hero.jpg") no-repeat center center/cover;
+}
+
+.header__logo {
+  color: var(--color--primary);
+}
+.header__nav {
+  display: none;
+}
+.header__text {
+  border: 2px solid var(--color--primary);
+  padding: 1rem 0.2rem;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  color: var(--color--primary);
+  font-size: 1rem;
+  margin: 4rem 0;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  gap: 2rem;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.container__heading {
+  color: var(--color--secondary);
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: larger;
+  font-weight: 300;
+}
+.container__text {
+  color: var(--color--secondary);
+  text-align: center;
+  font-family: "Alata", sans-serif;
+  font-size: var(--font-size--base);
+  font-weight: 400;
+}
+.container__image {
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container__image--primary {
+  aspect-ratio: 3/2;
+  background-image: url("../assets/images/mobile/image-interactive.jpg");
+}
+.container__image--secondary {
+  aspect-ratio: 2.725/1;
+}
+.container__image--secondary__deep-earth {
+  background-image: url("../assets/images/mobile/image-deep-earth.jpg");
+  position: relative;
+}
+.container__image--secondary__deep-earth::before {
+  content: "Deep Earth";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__night-arcade {
+  background-image: url("../assets/images/mobile/image-night-arcade.jpg");
+  position: relative;
+}
+.container__image--secondary__night-arcade::before {
+  content: "Night Arcade";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__soccer-team {
+  background-image: url("../assets/images/mobile/image-soccer-team.jpg");
+  position: relative;
+}
+.container__image--secondary__soccer-team::before {
+  content: "Soccer Team VR";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__the-grid {
+  background-image: url("../assets/images/mobile/image-grid.jpg");
+  position: relative;
+}
+.container__image--secondary__the-grid::before {
+  content: "The Grid";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__from-above {
+  background-image: url("../assets/images/mobile/image-from-above.jpg");
+  position: relative;
+}
+.container__image--secondary__from-above::before {
+  content: "From Up Above VR";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+  color: var(--color--primary);
+}
+.container__image--secondary__pocket-borealis {
+  background-image: url("../assets/images/mobile/image-pocket-borealis.jpg");
+  position: relative;
+}
+.container__image--secondary__pocket-borealis::before {
+  content: "Pocket Borealis";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__the-curiosity {
+  background-image: url("../assets/images/mobile/image-curiosity.jpg");
+  position: relative;
+}
+.container__image--secondary__the-curiosity::before {
+  content: "The Curiosity";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+.container__image--secondary__make-it-fisheye {
+  background-image: url("../assets/images/mobile/image-fisheye.jpg");
+  position: relative;
+}
+.container__image--secondary__make-it-fisheye::before {
+  content: "Make It Fisheye";
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: var(--color--primary);
+}
+
 footer {
   display: grid;
   grid-template: "logo" auto "links" auto "icons" auto "copyright" auto "attribution" auto/1fr;
