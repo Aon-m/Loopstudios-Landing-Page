@@ -393,32 +393,33 @@ footer {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
+        
+        &__deep-earth {
+          background-image: url("../assets/images/desktop/image-deep-earth.jpg");
+        }
+        &__night-arcade {
+          background-image: url("../assets/images/desktop/image-night-arcade.jpg");
+        }
+        &__soccer-team {
+          background-image: url("../assets/images/desktop/image-soccer-team.jpg");
+        }
+        &__the-grid {
+          background-image: url("../assets/images/desktop/image-grid.jpg");
+        }
+        &__from-above {
+          background-image: url("../assets/images/desktop/image-from-above.jpg");
+        }
+        &__pocket-borealis {
+          background-image: url("../assets/images/desktop/image-pocket-borealis.jpg");
+        }
+        &__the-curiosity {
+          background-image: url("../assets/images/desktop/image-curiosity.jpg");
+        }
+        &__make-it-fisheye {
+          background-image: url("../assets/images/desktop/image-fisheye.jpg");
+        }
       }
 
-      &__deep-earth {
-        background-image: url("../assets/images/desktop/image-deep-earth.jpg");
-      }
-      &__night-arcade {
-        background-image: url("../assets/images/desktop/image-night-arcade.jpg");
-      }
-      &__soccer-team {
-        background-image: url("../assets/images/desktop/image-soccer-team.jpg");
-      }
-      &__the-grid {
-        background-image: url("../assets/images/desktop/image-grid.jpg");
-      }
-      &__from-above {
-        background-image: url("../assets/images/desktop/image-from-above.jpg");
-      }
-      &__pocket-borealis {
-        background-image: url("../assets/images/desktop/image-pocket-borealis.jpg");
-      }
-      &__the-curiosity {
-        background-image: url("../assets/images/desktop/image-curiosity.jpg");
-      }
-      &__make-it-fisheye {
-        background-image: url("../assets/images/desktop/image-fisheye.jpg");
-      }
     }
     &__button {
       grid-area: 1 / 4 / span 1 / span 1;
