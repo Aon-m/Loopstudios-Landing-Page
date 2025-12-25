@@ -29,20 +29,38 @@ header {
   background: url("../assets/images/mobile/image-hero.jpg") no-repeat center center/cover;
 }
 
+.header__top {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
 .header__logo {
   color: var(--color--primary);
+  transform: scale(0.8) translate(-10%);
 }
-.header__nav {
+.header__hamburger {
+  display: block;
+  cursor: pointer;
+}
+.header__hamburger:hover {
+  opacity: 0.7;
+}
+.header__links {
   display: none;
 }
 .header__text {
   border: 2px solid var(--color--primary);
-  padding: 1rem 0.2rem;
+  padding: 1.5rem;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   color: var(--color--primary);
-  font-size: 1rem;
-  margin: 4rem 0;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  margin: 50% 0;
+}
+.header__text h2 {
+  width: 10ch;
 }
 
 main {
