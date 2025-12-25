@@ -16,7 +16,6 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   width: 100vw;
 }
@@ -26,7 +25,7 @@ header {
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  background: url("../assets/images/mobile/image-hero.jpg") no-repeat center
+  background: url("/assets/images/mobile/image-hero.jpg") no-repeat center
     center/cover;
 }
 
@@ -84,17 +83,22 @@ main {
   gap: 1.5rem;
   margin-block-end: 4rem;
 
+  &__text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
   &__heading {
     color: var(--color--secondary);
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     text-transform: uppercase;
-    font-size: 2rem;
+    font-size: clamp(2rem, calc(2rem + 0.5vw), 3rem);
     font-weight: 300;
     width: 16ch;
     margin: 0 auto;
   }
-  &__text {
+  &__paragraph {
     color: var(--color--secondary);
     text-align: center;
     font-family: "Alata", sans-serif;
@@ -112,7 +116,7 @@ main {
 
     &--primary {
       aspect-ratio: 3 / 2;
-      background-image: url("../assets/images/mobile/image-interactive.jpg");
+      background-image: url("/assets/images/mobile/image-interactive.jpg");
     }
 
     &--secondary {
@@ -131,7 +135,7 @@ main {
       }
 
       &__deep-earth {
-        background-image: url("../assets/images/mobile/image-deep-earth.jpg");
+        background-image: url("/assets/images/mobile/image-deep-earth.jpg");
         position: relative;
 
         &::before {
@@ -139,7 +143,7 @@ main {
         }
       }
       &__night-arcade {
-        background-image: url("../assets/images/mobile/image-night-arcade.jpg");
+        background-image: url("/assets/images/mobile/image-night-arcade.jpg");
         position: relative;
 
         &::before {
@@ -147,7 +151,7 @@ main {
         }
       }
       &__soccer-team {
-        background-image: url("../assets/images/mobile/image-soccer-team.jpg");
+        background-image: url("/assets/images/mobile/image-soccer-team.jpg");
         position: relative;
 
         &::before {
@@ -155,7 +159,7 @@ main {
         }
       }
       &__the-grid {
-        background-image: url("../assets/images/mobile/image-grid.jpg");
+        background-image: url("/assets/images/mobile/image-grid.jpg");
         position: relative;
 
         &::before {
@@ -164,7 +168,7 @@ main {
         }
       }
       &__from-above {
-        background-image: url("../assets/images/mobile/image-from-above.jpg");
+        background-image: url("/assets/images/mobile/image-from-above.jpg");
         position: relative;
 
         &::before {
@@ -173,7 +177,7 @@ main {
         }
       }
       &__pocket-borealis {
-        background-image: url("../assets/images/mobile/image-pocket-borealis.jpg");
+        background-image: url("/assets/images/mobile/image-pocket-borealis.jpg");
         position: relative;
 
         &::before {
@@ -181,7 +185,7 @@ main {
         }
       }
       &__the-curiosity {
-        background-image: url("../assets/images/mobile/image-curiosity.jpg");
+        background-image: url("/assets/images/mobile/image-curiosity.jpg");
         position: relative;
 
         &::before {
@@ -189,7 +193,7 @@ main {
         }
       }
       &__make-it-fisheye {
-        background-image: url("../assets/images/mobile/image-fisheye.jpg");
+        background-image: url("/assets/images/mobile/image-fisheye.jpg");
         position: relative;
 
         &::before {
@@ -197,6 +201,18 @@ main {
         }
       }
     }
+  }
+  &__button {
+    border: 2px solid var(--color--secondary);
+    background: var(--color--primary);
+    padding: 1rem 3rem;
+    width: fit-content;
+    max-width: 60%;
+    margin: auto;
+    font-family: "Josefin Sans", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    order: 1;
   }
 }
 
@@ -218,6 +234,10 @@ footer {
   & > * {
     align-self: center;
     justify-self: center;
+  }
+
+  & a {
+    color: var(--color--primary);
   }
 }
 
@@ -257,5 +277,209 @@ footer {
   &__attribution {
     grid-area: attribution;
     color: var(--color--tertiary);
+  }
+}
+
+@media screen and (min-width: 40rem) {
+  header {
+    padding: 3rem 7% 0;
+    background: url("/assets/images/desktop/image-hero.jpg") no-repeat center
+      center/cover;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.317);
+      z-index: 1;
+    }
+
+    & > * {
+      z-index: 2;
+    }
+  }
+  .header {
+    &__logo {
+      transform: scale(1) translate(0);
+    }
+
+    &__text {
+      font-size: 4rem;
+      margin: 15% auto 15% 0;
+      padding: 3rem;
+      max-width: 100%;
+
+      & h2 {
+        width: 15ch;
+      }
+    }
+
+    &__hamburger {
+      display: none;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: row;
+      gap: 2rem;
+
+      & li {
+        list-style: none;
+      }
+
+      & a {
+        color: var(--color--primary);
+        text-decoration: none;
+        font-family: "Alata", sans-serif;
+        font-size: var(--font-size--base);
+
+        &:hover {
+          opacity: 0.7;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+  main {
+    padding: 5rem 7%;
+    gap: 8rem;
+  }
+  .container {
+    position: relative;
+
+    &:nth-of-type(1) {
+      flex-direction: row;
+    }
+    &:nth-of-type(2) {
+      display: grid;
+      grid-template: auto 1fr 1fr / repeat(4, 1fr);
+    }
+    &__text {
+      position: absolute;
+      background: var(--color--primary);
+      bottom: -20%;
+      right: 0;
+      width: fit-content;
+      padding: 3rem 0 0 3rem;
+      gap: 2rem;
+    }
+    &__heading {
+      margin-inline: 0 auto;
+      text-align: left;
+
+      &--secondary {
+        grid-area: 1 / 1 / span 1 / span 3;
+        margin-block-end: 2rem;
+      }
+    }
+    &__paragraph {
+      margin-inline: 0 auto;
+      text-align: left;
+      width: 40ch;
+    }
+
+    &__image {
+      &--primary {
+        background-image: url("/assets/images/desktop/image-interactive.jpg");
+        aspect-ratio: 1.462 / 1;
+        width: 70%;
+      }
+      &--secondary {
+        aspect-ratio: 56 / 100;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      &__deep-earth {
+        background-image: url("/assets/images/desktop/image-deep-earth.jpg");
+      }
+      &__night-arcade {
+        background-image: url("/assets/images/desktop/image-night-arcade.jpg");
+      }
+      &__soccer-team {
+        background-image: url("/assets/images/desktop/image-soccer-team.jpg");
+      }
+      &__the-grid {
+        background-image: url("/assets/images/desktop/image-grid.jpg");
+      }
+      &__from-above {
+        background-image: url("/assets/images/desktop/image-from-above.jpg");
+      }
+      &__pocket-borealis {
+        background-image: url("/assets/images/desktop/image-pocket-borealis.jpg");
+      }
+      &__the-curiosity {
+        background-image: url("/assets/images/desktop/image-curiosity.jpg");
+      }
+      &__make-it-fisheye {
+        background-image: url("/assets/images/desktop/image-fisheye.jpg");
+      }
+    }
+    &__button {
+      grid-area: 1 / 4 / span 1 / span 1;
+      order: 0;
+      margin: 0;
+      margin-inline-start: auto;
+      max-width: none;
+      margin-block-end: 2rem;
+    }
+  }
+  footer {
+    grid-template:
+      "logo icons" auto
+      "links copyright" auto
+      "attribution attribution" auto/ 1fr 1fr;
+    padding: 3rem 7% 1rem;
+  }
+
+  .footer {
+    &__logo {
+      justify-self: start;
+    }
+    &__icons {
+      justify-self: end;
+    }
+    &__links {
+      justify-self: start;
+      flex-direction: row;
+    }
+    &__copyright-text {
+      justify-self: end;
+      text-align: right;
+    }
+  }
+}
+
+@media screen and (min-width: 60rem) {
+  header,
+  main,
+  footer {
+    padding-inline-start: 10%;
+    padding-inline-end: 10%;
+  }
+
+  .header {
+    &__text {
+      font-size: 5rem;
+    }
+  }
+  .container {
+    &__text {
+      padding: 5rem 0 0 7rem;
+      bottom: 0;
+    }
+    &__paragraph {
+      width: 29.3rem;
+    }
+  }
+  .footer {
+    &__links {
+      gap: 3rem;
+    }
   }
 }

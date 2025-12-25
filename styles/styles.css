@@ -16,7 +16,6 @@
 body {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   width: 100vw;
 }
@@ -26,7 +25,7 @@ header {
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
-  background: url("../assets/images/mobile/image-hero.jpg") no-repeat center center/cover;
+  background: url("/assets/images/mobile/image-hero.jpg") no-repeat center center/cover;
 }
 
 .header__top {
@@ -79,17 +78,22 @@ main {
   gap: 1.5rem;
   margin-block-end: 4rem;
 }
+.container__text {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .container__heading {
   color: var(--color--secondary);
   text-align: center;
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: clamp(2rem, 2rem + 0.5vw, 3rem);
   font-weight: 300;
   width: 16ch;
   margin: 0 auto;
 }
-.container__text {
+.container__paragraph {
   color: var(--color--secondary);
   text-align: center;
   font-family: "Alata", sans-serif;
@@ -107,7 +111,7 @@ main {
 }
 .container__image--primary {
   aspect-ratio: 3/2;
-  background-image: url("../assets/images/mobile/image-interactive.jpg");
+  background-image: url("/assets/images/mobile/image-interactive.jpg");
 }
 .container__image--secondary {
   aspect-ratio: 2.725/1;
@@ -124,28 +128,28 @@ main {
   color: var(--color--primary);
 }
 .container__image--secondary__deep-earth {
-  background-image: url("../assets/images/mobile/image-deep-earth.jpg");
+  background-image: url("/assets/images/mobile/image-deep-earth.jpg");
   position: relative;
 }
 .container__image--secondary__deep-earth::before {
   content: "Deep Earth";
 }
 .container__image--secondary__night-arcade {
-  background-image: url("../assets/images/mobile/image-night-arcade.jpg");
+  background-image: url("/assets/images/mobile/image-night-arcade.jpg");
   position: relative;
 }
 .container__image--secondary__night-arcade::before {
   content: "Night Arcade";
 }
 .container__image--secondary__soccer-team {
-  background-image: url("../assets/images/mobile/image-soccer-team.jpg");
+  background-image: url("/assets/images/mobile/image-soccer-team.jpg");
   position: relative;
 }
 .container__image--secondary__soccer-team::before {
   content: "Soccer Team VR";
 }
 .container__image--secondary__the-grid {
-  background-image: url("../assets/images/mobile/image-grid.jpg");
+  background-image: url("/assets/images/mobile/image-grid.jpg");
   position: relative;
 }
 .container__image--secondary__the-grid::before {
@@ -153,7 +157,7 @@ main {
   width: 4ch;
 }
 .container__image--secondary__from-above {
-  background-image: url("../assets/images/mobile/image-from-above.jpg");
+  background-image: url("/assets/images/mobile/image-from-above.jpg");
   position: relative;
 }
 .container__image--secondary__from-above::before {
@@ -161,25 +165,38 @@ main {
   color: var(--color--primary);
 }
 .container__image--secondary__pocket-borealis {
-  background-image: url("../assets/images/mobile/image-pocket-borealis.jpg");
+  background-image: url("/assets/images/mobile/image-pocket-borealis.jpg");
   position: relative;
 }
 .container__image--secondary__pocket-borealis::before {
   content: "Pocket Borealis";
 }
 .container__image--secondary__the-curiosity {
-  background-image: url("../assets/images/mobile/image-curiosity.jpg");
+  background-image: url("/assets/images/mobile/image-curiosity.jpg");
   position: relative;
 }
 .container__image--secondary__the-curiosity::before {
   content: "The Curiosity";
 }
 .container__image--secondary__make-it-fisheye {
-  background-image: url("../assets/images/mobile/image-fisheye.jpg");
+  background-image: url("/assets/images/mobile/image-fisheye.jpg");
   position: relative;
 }
 .container__image--secondary__make-it-fisheye::before {
   content: "Make It Fisheye";
+}
+.container__button {
+  border: 2px solid var(--color--secondary);
+  background: var(--color--primary);
+  padding: 1rem 3rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 60%;
+  margin: auto;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  order: 1;
 }
 
 footer {
@@ -195,6 +212,9 @@ footer {
 footer > * {
   align-self: center;
   justify-self: center;
+}
+footer a {
+  color: var(--color--primary);
 }
 
 .footer__logo {
@@ -231,4 +251,177 @@ footer > * {
 .footer__attribution {
   grid-area: attribution;
   color: var(--color--tertiary);
+}
+
+@media screen and (min-width: 40rem) {
+  header {
+    padding: 3rem 7% 0;
+    background: url("/assets/images/desktop/image-hero.jpg") no-repeat center center/cover;
+    position: relative;
+  }
+  header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.317);
+    z-index: 1;
+  }
+  header > * {
+    z-index: 2;
+  }
+  .header__logo {
+    transform: scale(1) translate(0);
+  }
+  .header__text {
+    font-size: 4rem;
+    margin: 15% auto 15% 0;
+    padding: 3rem;
+    max-width: 100%;
+  }
+  .header__text h2 {
+    width: 15ch;
+  }
+  .header__hamburger {
+    display: none;
+  }
+  .header__links {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+  }
+  .header__links li {
+    list-style: none;
+  }
+  .header__links a {
+    color: var(--color--primary);
+    text-decoration: none;
+    font-family: "Alata", sans-serif;
+    font-size: var(--font-size--base);
+  }
+  .header__links a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+  }
+  main {
+    padding: 5rem 7%;
+    gap: 8rem;
+  }
+  .container {
+    position: relative;
+  }
+  .container:nth-of-type(1) {
+    flex-direction: row;
+  }
+  .container:nth-of-type(2) {
+    display: grid;
+    grid-template: auto 1fr 1fr/repeat(4, 1fr);
+  }
+  .container__text {
+    position: absolute;
+    background: var(--color--primary);
+    bottom: -20%;
+    right: 0;
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 3rem 0 0 3rem;
+    gap: 2rem;
+  }
+  .container__heading {
+    margin-inline: 0 auto;
+    text-align: left;
+  }
+  .container__heading--secondary {
+    grid-area: 1/1/span 1/span 3;
+    margin-block-end: 2rem;
+  }
+  .container__paragraph {
+    margin-inline: 0 auto;
+    text-align: left;
+    width: 40ch;
+  }
+  .container__image--primary {
+    background-image: url("/assets/images/desktop/image-interactive.jpg");
+    aspect-ratio: 1.462/1;
+    width: 70%;
+  }
+  .container__image--secondary {
+    aspect-ratio: 56/100;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .container__image__deep-earth {
+    background-image: url("/assets/images/desktop/image-deep-earth.jpg");
+  }
+  .container__image__night-arcade {
+    background-image: url("/assets/images/desktop/image-night-arcade.jpg");
+  }
+  .container__image__soccer-team {
+    background-image: url("/assets/images/desktop/image-soccer-team.jpg");
+  }
+  .container__image__the-grid {
+    background-image: url("/assets/images/desktop/image-grid.jpg");
+  }
+  .container__image__from-above {
+    background-image: url("/assets/images/desktop/image-from-above.jpg");
+  }
+  .container__image__pocket-borealis {
+    background-image: url("/assets/images/desktop/image-pocket-borealis.jpg");
+  }
+  .container__image__the-curiosity {
+    background-image: url("/assets/images/desktop/image-curiosity.jpg");
+  }
+  .container__image__make-it-fisheye {
+    background-image: url("/assets/images/desktop/image-fisheye.jpg");
+  }
+  .container__button {
+    grid-area: 1/4/span 1/span 1;
+    order: 0;
+    margin: 0;
+    margin-inline-start: auto;
+    max-width: none;
+    margin-block-end: 2rem;
+  }
+  footer {
+    grid-template: "logo icons" auto "links copyright" auto "attribution attribution" auto/1fr 1fr;
+    padding: 3rem 7% 1rem;
+  }
+  .footer__logo {
+    justify-self: start;
+  }
+  .footer__icons {
+    justify-self: end;
+  }
+  .footer__links {
+    justify-self: start;
+    flex-direction: row;
+  }
+  .footer__copyright-text {
+    justify-self: end;
+    text-align: right;
+  }
+}
+@media screen and (min-width: 60rem) {
+  header,
+  main,
+  footer {
+    padding-inline-start: 10%;
+    padding-inline-end: 10%;
+  }
+  .header__text {
+    font-size: 5rem;
+  }
+  .container__text {
+    padding: 5rem 0 0 7rem;
+    bottom: 0;
+  }
+  .container__paragraph {
+    width: 29.3rem;
+  }
+  .footer__links {
+    gap: 3rem;
+  }
 }/*# sourceMappingURL=styles.css.map */
