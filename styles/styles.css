@@ -174,6 +174,22 @@ main {
 .container__image--secondary {
   aspect-ratio: 2.725/1;
 }
+.container__image--secondary:hover {
+  cursor: pointer;
+}
+.container__image--secondary:hover::after {
+  content: "";
+  background: var(--color--tertiary);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.container__image--secondary:hover::before {
+  color: var(--color--secondary);
+}
 .container__image--secondary::before {
   content: "";
   font-family: "Josefin Sans", sans-serif;
@@ -184,6 +200,7 @@ main {
   bottom: 1rem;
   left: 1rem;
   color: var(--color--primary);
+  z-index: 3;
 }
 .container__image--secondary__deep-earth {
   background-image: url("../assets/images/mobile/image-deep-earth.jpg");
@@ -256,6 +273,11 @@ main {
   letter-spacing: 3px;
   order: 1;
 }
+.container__button:hover {
+  cursor: pointer;
+  background: var(--color--secondary);
+  color: var(--color--primary);
+}
 
 footer {
   display: grid;
@@ -312,6 +334,33 @@ footer a {
 }
 
 @media screen and (min-width: 45rem) {
+  .dynamic-hover {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+  }
+  .dynamic-hover:hover {
+    opacity: 1;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .dynamic-hover::before {
+    content: "";
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 0%;
+    height: 2px;
+    background-color: var(--color--primary);
+    transition: 200ms ease;
+  }
+  .dynamic-hover:hover::before {
+    width: 60%;
+  }
+  .dynamic-hover:hover.icon::before {
+    width: 100%;
+  }
   header {
     padding: 3rem 7% 0;
     background: url("../assets/images/desktop/image-hero.jpg") no-repeat center center/cover;
@@ -368,13 +417,13 @@ footer a {
   }
   .header__links a {
     color: var(--color--primary);
-    text-decoration: none;
     font-family: "Alata", sans-serif;
     font-size: var(--font-size--base);
+    position: relative;
   }
   .header__links a:hover {
-    opacity: 0.7;
-    text-decoration: underline;
+    opacity: 1;
+    text-decoration: none;
   }
   main {
     padding: 5rem 7%;
