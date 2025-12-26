@@ -45,8 +45,66 @@ header {
 .header__hamburger:hover {
   opacity: 0.7;
 }
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  background: var(--color--secondary);
+  padding: 1rem;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  transform-origin: right;
+  transform: scaleX(0);
+  transition: transform 300ms ease;
+  pointer-events: none;
+}
+.header__nav--open {
+  transform: scaleX(1);
+  pointer-events: auto;
+}
+.header__nav-logo {
+  transform: scale(0.7) translate(-20%);
+}
+.header__nav-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-block-start: 1rem;
+}
+.header__close-button {
+  color: var(--color--primary);
+  transform: scale(0.8);
+  cursor: pointer;
+}
+.header__close-button:hover {
+  color: var(--color--tertiary);
+}
 .header__links {
-  display: none;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 1rem;
+  margin-block: 40%;
+}
+.header__links li {
+  margin-inline: 0 auto;
+  list-style: none;
+  font-family: "Josefin Sans", sans-serif;
+  text-transform: uppercase;
+  font-size: var(--font-size--base);
+}
+.header__links a {
+  color: var(--color--primary);
+  text-decoration: none;
+  font-family: "Alata", sans-serif;
+  font-size: var(--font-size--base);
+}
+.header__links a:hover {
+  opacity: 0.7;
+  text-decoration: underline;
 }
 .header__text {
   border: 2px solid var(--color--primary);
@@ -121,7 +179,7 @@ main {
   font-family: "Josefin Sans", sans-serif;
   text-transform: uppercase;
   position: absolute;
-  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1.2rem + 1vw, 3rem);
   width: 9ch;
   bottom: 1rem;
   left: 1rem;
@@ -253,7 +311,7 @@ footer a {
   color: var(--color--tertiary);
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 45rem) {
   header {
     padding: 3rem 7% 0;
     background: url("../assets/images/desktop/image-hero.jpg") no-repeat center center/cover;
@@ -275,6 +333,17 @@ footer a {
   .header__logo {
     transform: scale(1) translate(0);
   }
+  .header__nav {
+    position: static;
+    background: transparent;
+    transform-origin: none;
+    transform: scaleX(1);
+    transition: none;
+    pointer-events: auto;
+  }
+  .header__nav-top {
+    display: none;
+  }
   .header__text {
     font-size: 4rem;
     margin: 15% auto 15% 0;
@@ -291,6 +360,8 @@ footer a {
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    padding: initial;
+    margin-block: 0;
   }
   .header__links li {
     list-style: none;

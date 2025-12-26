@@ -48,9 +48,75 @@ header {
       opacity: 0.7;
     }
   }
-  &__links {
-    display: none;
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    background: var(--color--secondary);
+    padding: 1rem;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    right: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform 300ms ease;
+    pointer-events: none;
+
+    &--open {
+      transform: scaleX(1);
+      pointer-events: auto;
+    }
+
+    &-logo {
+      transform: scale(0.7) translate(-20%);
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      margin-block-start: 1rem;
+    }
   }
+  &__close-button {
+    color: var(--color--primary);
+    transform: scale(0.8);
+    cursor: pointer;
+
+    &:hover {
+      color: var(--color--tertiary);
+    }
+  }
+  &__links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    margin-block: 40%;
+
+    & li {
+      margin-inline: 0 auto;
+      list-style: none;
+      font-family: "Josefin Sans", sans-serif;
+      text-transform: uppercase;
+      font-size: var(--font-size--base);
+    }
+
+    & a {
+      color: var(--color--primary);
+      text-decoration: none;
+      font-family: "Alata", sans-serif;
+      font-size: var(--font-size--base);
+
+      &:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+      }
+    }
+  }
+
   &__text {
     border: 2px solid var(--color--primary);
     padding: 1.5rem;
@@ -127,7 +193,7 @@ main {
         font-family: "Josefin Sans", sans-serif;
         text-transform: uppercase;
         position: absolute;
-        font-size: 1.5rem;
+        font-size: clamp(1.5rem, calc(1.2rem + 1vw), 3rem);
         width: 9ch;
         bottom: 1rem;
         left: 1rem;
@@ -280,7 +346,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 40rem) {
+@media screen and (min-width: 45rem) {
   header {
     padding: 3rem 7% 0;
     background: url("../assets/images/desktop/image-hero.jpg") no-repeat center
@@ -302,9 +368,23 @@ footer {
       z-index: 2;
     }
   }
+
   .header {
     &__logo {
       transform: scale(1) translate(0);
+    }
+
+    &__nav {
+      position: static;
+      background: transparent;
+      transform-origin: none;
+      transform: scaleX(1);
+      transition: none;
+      pointer-events: auto;
+
+      &-top {
+        display: none;
+      }
     }
 
     &__text {
@@ -326,6 +406,8 @@ footer {
       display: flex;
       flex-direction: row;
       gap: 2rem;
+      padding: initial;
+      margin-block: 0;
 
       & li {
         list-style: none;
@@ -393,7 +475,7 @@ footer {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
-        
+
         &__deep-earth {
           background-image: url("../assets/images/desktop/image-deep-earth.jpg");
         }
@@ -419,7 +501,6 @@ footer {
           background-image: url("../assets/images/desktop/image-fisheye.jpg");
         }
       }
-
     }
     &__button {
       grid-area: 1 / 4 / span 1 / span 1;
