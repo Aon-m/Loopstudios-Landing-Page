@@ -160,9 +160,9 @@ main {
     text-align: center;
     font-family: "Josefin Sans", sans-serif;
     text-transform: uppercase;
-    font-size: clamp(2rem, calc(2rem + 0.5vw), 3rem);
+    font-size: clamp(1.8rem, calc(1.8rem + 0.5vw), 3rem);
     font-weight: 300;
-    width: 16ch;
+    max-width: 16ch;
     margin: 0 auto;
   }
   &__paragraph {
@@ -171,7 +171,7 @@ main {
     font-family: "Alata", sans-serif;
     font-size: var(--font-size--base);
     font-weight: 400;
-    width: 30ch;
+    max-width: 30ch;
     margin: 0 auto;
   }
   &__image {
@@ -292,7 +292,7 @@ main {
   &__button {
     border: 2px solid var(--color--secondary);
     background: var(--color--primary);
-    padding: 1rem 3rem;
+    padding: 1rem 2rem;
     width: fit-content;
     max-width: 60%;
     margin: auto;
@@ -446,8 +446,8 @@ footer {
     }
 
     &__text {
-      font-size: 4rem;
-      margin: 15% auto 15% 0;
+      font-size: 3rem;
+      margin: 10% auto 10% 0;
       padding: 3rem;
       max-width: 100%;
 
